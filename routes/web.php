@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+// Verification route to verify user!
+Route::get('user/verify/{verification_code}', 'AuthController@verifyUser');
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//Auth::routes();
+
