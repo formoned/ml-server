@@ -152,6 +152,7 @@ return [
          */
 
         Laravel\Passport\PassportServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -212,6 +213,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Passport' => Laravel\Passport\PassportServiceProvider::class,
+        'Cors' => Barryvdh\Cors\ServiceProvider::class,
+
 
     ],
 
