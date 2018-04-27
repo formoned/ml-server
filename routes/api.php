@@ -13,10 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//Route::get('/user', function (Request $request) {
 //    return $request->user();
-//});
+//})->middleware(['auth:api', 'cors']);
 
 Route::group(['middleware' => ['api','cors']], function () {
+
     Route::post('auth/register', 'Auth\ApiRegisterController@create');
+
+});
+
+Route::group(['middleware' => ['auth:api', 'cors']], function () {
+
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::post('add', 'UserController@add');
+
 });
